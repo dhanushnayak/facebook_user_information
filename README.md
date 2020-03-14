@@ -1,7 +1,7 @@
 # facebook_user_information
 get information and store in your database(mongoDB)
 
-go by code #replace Your profile url with your facebook_profile_url,email_here by email and password_here by password
+go by code # replace Your profile url with your facebook_profile_url,email_here by email and password_here by password
 
 make list of names in dataset and return list from dataset
 
