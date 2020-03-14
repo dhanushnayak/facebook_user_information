@@ -29,10 +29,10 @@ def facebookscrap(user):
         'Relationship':{'txt':"/html/body/div/div/div[2]/div/div[1]/div[7]/div/div[2]/div/div/div"},
         'Email':{'txt':'/html/body/div/div/div[2]/div/div[1]/div[5]/div/div[2]/div[2]/table/tbody/tr/td[2]/div/a'}
     }
-    driver = webdriver.Firefox(executable_path='D:\\geckodriver.exe')
+    driver = webdriver.Firefox(executable_path='path_of_geckodriver')
     # driver.maximize_window()
     print("Logging in....")
-    driver.get("https://www.facebook.com/dhanush.prathap3/")
+    driver.get("Your profile url")
     element = driver.find_element_by_id("email")
     element.send_keys('email_here')
     element = driver.find_element_by_id("pass")
