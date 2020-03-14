@@ -4,18 +4,8 @@ from selenium import webdriver
 import pandas as pd
 import time
 def dataset():
-    dfm = pd.read_csv('E://dataset/namesm.csv')
-    dff = pd.read_csv('E://dataset/namesf.csv')
-
-    dff=dff[dff.name.str.contains("[a-z,A-z]")==True]
-
-    dff=dff[dff.name.str.contains("[@,0-9,/,-]")==False]
-
-    dfm=dfm[dfm.name.str.contains("[a-z,A-z]")==True]
-
-    dfm=dfm[dfm.name.str.contains("[@,0-9,/,-]")==False]
-    dname=pd.concat([dfm,dff])
-    return dname['name']
+    #load csv file 
+    return name
 
 def facebookscrap(user):
     sections = {
@@ -43,10 +33,10 @@ def facebookscrap(user):
     # driver.maximize_window()
     print("Logging in....")
     driver.get("https://www.facebook.com/dhanush.prathap3/")
-    element = driver.find_element_by_id("dhanushprathap@yahoo.com")
-    element.send_keys('email')
+    element = driver.find_element_by_id("email")
+    element.send_keys('email_here')
     element = driver.find_element_by_id("pass")
-    element.send_keys('Amruthap@1')
+    element.send_keys('password_here')
     element = driver.find_element_by_id("loginbutton")
     element.click()
     print("Logged in....")
@@ -167,14 +157,12 @@ def ifd():
     return df['id']
 
 def connectdb():
-    from pymongo import MongoClient as client
-    connect = client('mongodb://localhost:27017/')
-    db=connect.osint
+    #connect to database 
     return db
 def update():  
         
         y= connectdb()
-        fd=y['fund_facebook']
+        fd=#table
 
         import json
         records = json.loads(df.T.to_json()).values()
